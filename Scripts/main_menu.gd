@@ -3,7 +3,7 @@ extends Control
 @export var playButton: Button
 @export var optionsButton: Button
 @export var quitButton: Button
-@onready var audio = $MainMenuUI/Content/button_click
+@onready var audio = $MainMenuUI/button_click
 
 func _ready() -> void:
 	playButton.grab_focus()
@@ -27,3 +27,22 @@ func _ready() -> void:
 	
 
 	Engine.time_scale = 1.0
+	
+	
+func _on_start_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+
+func _on_start_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_1.png"))
+
+func _on_settings_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+
+func _on_settings_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_1.png"))
+
+func _on_exit_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+
+func _on_exit_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_1.png"))

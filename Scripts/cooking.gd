@@ -9,6 +9,8 @@ extends Node3D
 @onready var animation_obj: Node3D = $Interact
 @onready var animation_player: AnimationPlayer = $Interact/AnimationPlayer
 
+
+
 var is_holding: bool = false
 var current_hold_timer: float = 0.0
 var player_in_range: bool = false

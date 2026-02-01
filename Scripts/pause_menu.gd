@@ -62,3 +62,23 @@ func _on_quit_pressed() -> void:
 func _onOptionsClosed() -> void:
 	show()
 	resumeButton.grab_focus()
+	
+
+
+#hover mouse!!!
+func _on_resume_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+func _on_resume_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_1.png"))
+func _on_restart_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+func _on_restart_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_1.png"))
+func _on_settings_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+func _on_settings_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_1.png"))
+func _on_quit_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+func _on_quit_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_1.png"))
