@@ -100,3 +100,6 @@ stream = ExtResource("5_f64u0")
 volume_db = -3.41
 pitch_scale = 1.88
 bus = &"SFX"
+
+[connection signal="mouse_entered" from="Panel/VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/VBoxContainer/Button" to="." method="_on_button_mouse_exited"]

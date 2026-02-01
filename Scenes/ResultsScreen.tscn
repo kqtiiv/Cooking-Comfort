@@ -210,6 +210,12 @@ volume_db = -3.41
 pitch_scale = 1.88
 bus = &"SFX"
 
+[connection signal="mouse_entered" from="background/PanelContainer/Restart" to="." method="_on_restart_mouse_entered"]
+[connection signal="mouse_exited" from="background/PanelContainer/Restart" to="." method="_on_restart_mouse_exited"]
 [connection signal="pressed" from="background/PanelContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="mouse_entered" from="background/PanelContainer/Credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="mouse_exited" from="background/PanelContainer/Credits" to="." method="_on_credits_mouse_exited"]
 [connection signal="pressed" from="background/PanelContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="mouse_entered" from="background/PanelContainer/Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="mouse_exited" from="background/PanelContainer/Exit" to="." method="_on_exit_mouse_exited"]
 [connection signal="pressed" from="background/PanelContainer/Exit" to="." method="_on_exit_pressed"]

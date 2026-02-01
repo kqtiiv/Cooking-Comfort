@@ -58,3 +58,19 @@ func Show(onCloseButtonAction: Callable) -> void:
 	UpdateVisual()
 	show()
 	soundEffectsButton.grab_focus()
+	
+	
+
+#hover mouse on buttons
+func _on_sound_effects_button_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+func _on_sound_effects_button_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_1.png"))
+func _on_music_button_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+func _on_music_button_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_1.png"))
+func _on_close_button_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+func _on_close_button_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_1.png"))

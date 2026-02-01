@@ -124,9 +124,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8l4an")
-playButton = NodePath("MainMenuUI/Content/Start")
-optionsButton = NodePath("MainMenuUI/Content/Settings")
-quitButton = NodePath("MainMenuUI/Content/Exit")
+playButton = NodePath("Content/Start")
+optionsButton = NodePath("Content/Settings")
+quitButton = NodePath("Content/Exit")
 
 [node name="BG" type="Panel" parent="."]
 layout_mode = 1
@@ -146,22 +146,27 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_opfnp")
 
-[node name="Content" type="VBoxContainer" parent="MainMenuUI"]
+[node name="button_click" type="AudioStreamPlayer" parent="MainMenuUI"]
+stream = ExtResource("6_bawyk")
+volume_db = -5.318
+pitch_scale = 1.88
+
+[node name="Content" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -470.0
-offset_top = 74.0
-offset_right = -208.08154
-offset_bottom = 274.0
+anchors_preset = -1
+anchor_left = 0.17
+anchor_top = 0.74100006
+anchor_right = 0.17
+anchor_bottom = 0.74100006
+offset_left = -125.84
+offset_top = -71.16803
+offset_right = 134.22742
+offset_bottom = 70.83197
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 26
 
-[node name="Start" type="Button" parent="MainMenuUI/Content"]
+[node name="Start" type="Button" parent="Content"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
@@ -178,7 +183,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5c2t2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vr1f0")
 text = "Start!"
 
-[node name="Settings" type="Button" parent="MainMenuUI/Content"]
+[node name="Settings" type="Button" parent="Content"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
@@ -195,7 +200,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5c2t2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vtepg")
 text = "Settings"
 
-[node name="Exit" type="Button" parent="MainMenuUI/Content"]
+[node name="Exit" type="Button" parent="Content"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
@@ -212,11 +217,12 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5c2t2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wyh8j")
 text = "Exit"
 
-[node name="button_click" type="AudioStreamPlayer" parent="MainMenuUI/Content"]
-stream = ExtResource("6_bawyk")
-volume_db = -5.318
-pitch_scale = 1.88
-
-[connection signal="pressed" from="MainMenuUI/Content/Start" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="MainMenuUI/Content/Settings" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="MainMenuUI/Content/Exit" to="." method="_on_exit_button_pressed"]
+[connection signal="mouse_entered" from="Content/Start" to="." method="_on_start_mouse_entered"]
+[connection signal="mouse_exited" from="Content/Start" to="." method="_on_start_mouse_exited"]
+[connection signal="pressed" from="Content/Start" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="Content/Settings" to="." method="_on_settings_mouse_entered"]
+[connection signal="mouse_exited" from="Content/Settings" to="." method="_on_settings_mouse_exited"]
+[connection signal="pressed" from="Content/Settings" to="." method="_on_settings_button_pressed"]
+[connection signal="mouse_entered" from="Content/Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="mouse_exited" from="Content/Exit" to="." method="_on_exit_mouse_exited"]
+[connection signal="pressed" from="Content/Exit" to="." method="_on_exit_button_pressed"]

@@ -66,3 +66,28 @@ func _on_exit_pressed():
 	audio.play()
 	await get_tree().create_timer(0.25).timeout 
 	get_tree().quit()
+	
+	
+
+
+func _on_restart_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+
+func _on_restart_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_1.png"))
+
+
+func _on_credits_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+
+
+func _on_credits_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+
+
+func _on_exit_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+
+
+func _on_exit_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))

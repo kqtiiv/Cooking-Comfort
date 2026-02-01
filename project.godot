@@ -13,7 +13,7 @@ config_version=5
 config/name="cafe dot"
 run/main_scene="uid://bmw5q3hto54x5"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://ck8f8hd8bwikv"
 "<<<<<<<HEAD[audio]buses/default_bus_layout"=""
 "<<<<<<<HEAD[autoload]MusicManager"="*res://Scenes/music_manager.tscn"
 SoundManager="*res://Scenes/sound_manager.tscn"
@@ -27,6 +27,12 @@ GameManager="*res://Scenes/game_manager.tscn"
 CookingUI="*res://Scenes/cooking.tscn"
 SceneTransition="*res://Scenes/SceneTransition.tscn"
 EmotionSelect="*res://Scenes/EmotionSelect.tscn"
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://dfo7q85nwks55"
 
 [global_group]
 
