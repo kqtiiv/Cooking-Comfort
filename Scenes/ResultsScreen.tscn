@@ -1,17 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://b246gy54eqbls"]
+[gd_scene load_steps=13 format=3 uid="uid://b246gy54eqbls"]
 
 [ext_resource type="Script" uid="uid://yjli7eomq61e" path="res://Scripts/results_screen.gd" id="1_jxlxw"]
-[ext_resource type="Texture2D" uid="uid://5wtn2apa843m" path="res://Images/endgame_bg.png" id="2_gnyy0"]
 [ext_resource type="Texture2D" uid="uid://com52vqwf6n3c" path="res://Images/omurice/3star.png" id="2_vcfm3"]
 [ext_resource type="Texture2D" uid="uid://bl5da8x6k3bab" path="res://Images/omurice/2star.png" id="3_s5hmk"]
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="3_ykr4e"]
 [ext_resource type="Texture2D" uid="uid://d2cvsx2mr878j" path="res://Images/omurice/1star.png" id="4_7wt1v"]
-[ext_resource type="StyleBox" path="res://endgame_buttons.tres" id="4_gnyy0"]
+[ext_resource type="StyleBox" uid="uid://b8ab2apfhfhjl" path="res://endgame_buttons.tres" id="4_gnyy0"]
+[ext_resource type="Texture2D" uid="uid://bofbfwwn8f367" path="res://Images/resultsbg.png" id="5_s5hmk"]
 [ext_resource type="Texture2D" uid="uid://di6dktdk4r50p" path="res://Images/omurice/0star.png" id="8_s5hmk"]
+[ext_resource type="AudioStream" uid="uid://c8lib81jxdfps" path="res://Assets/Sounds/click.mp3" id="9_7wt1v"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v8ikh"]
-texture = ExtResource("2_ykr4e")
-modulate_color = Color(0.9867516, 0.9867516, 0.9867516, 0.8235294)
+texture = ExtResource("5_s5hmk")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcfm3"]
 bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
@@ -41,7 +41,7 @@ corner_radius_bottom_left = 10
 shadow_color = Color(0.99215686, 0.95686275, 0.72156864, 0)
 shadow_size = 8
 
-[node name="Results" type="Control" node_paths=PackedStringArray("message_label", "message_label_2", "result_image")]
+[node name="Results" type="Control" node_paths=PackedStringArray("result_image")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,8 +49,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jxlxw")
-message_label = NodePath("background/Label")
-message_label_2 = NodePath("background/Label2")
 result_image = NodePath("TextureRect")
 perfect_image = ExtResource("2_vcfm3")
 good_image = ExtResource("3_s5hmk")
@@ -143,11 +141,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vcfm3")
 
-[node name="resultsEgg" type="Sprite2D" parent="background"]
-position = Vector2(569.00006, 301.00003)
-scale = Vector2(0.29641542, 0.29641545)
-texture = ExtResource("5_v8ikh")
-
 [node name="results" type="Panel" parent="background"]
 layout_mode = 0
 offset_left = 280.0
@@ -210,3 +203,19 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_s5hmk")
 expand_mode = 3
+
+[node name="button_click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_7wt1v")
+volume_db = -3.41
+pitch_scale = 1.88
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="background/PanelContainer/Restart" to="." method="_on_restart_mouse_entered"]
+[connection signal="mouse_exited" from="background/PanelContainer/Restart" to="." method="_on_restart_mouse_exited"]
+[connection signal="pressed" from="background/PanelContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="mouse_entered" from="background/PanelContainer/Credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="mouse_exited" from="background/PanelContainer/Credits" to="." method="_on_credits_mouse_exited"]
+[connection signal="pressed" from="background/PanelContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="mouse_entered" from="background/PanelContainer/Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="mouse_exited" from="background/PanelContainer/Exit" to="." method="_on_exit_mouse_exited"]
+[connection signal="pressed" from="background/PanelContainer/Exit" to="." method="_on_exit_pressed"]

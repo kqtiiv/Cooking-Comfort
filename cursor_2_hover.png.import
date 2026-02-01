@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp1l5dbt3sj6o"
-path="res://.godot/imported/finish3stars.png-41c01609f1e5b22e7d5b24ac58dfea1d.ctex"
+uid="uid://pkdksy7m2ob3"
+path="res://.godot/imported/cursor_2_hover.png-6f15339c3bec7c6d9636763287d28491.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/finish3stars.png"
-dest_files=["res://.godot/imported/finish3stars.png-41c01609f1e5b22e7d5b24ac58dfea1d.ctex"]
+source_file="res://cursor_2_hover.png"
+dest_files=["res://.godot/imported/cursor_2_hover.png-6f15339c3bec7c6d9636763287d28491.ctex"]
 
 [params]
 

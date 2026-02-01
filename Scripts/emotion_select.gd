@@ -69,8 +69,33 @@ func _on_emotion_selected(selected_image: CanvasItem, index: int) -> void:
 		_return_to_kitchen()
 
 func _go_to_results() -> void:
-	get_tree().change_scene_to_file("res://scenes/ResultsPage.tscn")
+	SceneTransition.change_scene_to_file("res://scenes/ResultsPage.tscn")
 
 func _return_to_kitchen() -> void:
 	GameManager.current_step = GameManager.CookingStep.SERVE
+	hide()
+	
+	
+
+#hover cursor change on buttons
+func _on_emotion_1_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+func _on_emotion_1_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_1.png"))
+func _on_emotion_2_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+func _on_emotion_2_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_1.png"))
+func _on_emotion_3_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+func _on_emotion_3_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_1.png"))
+func _on_emotion_4_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+func _on_emotion_4_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_1.png"))
+func _on_emotion_5_mouse_entered():
+	Input.set_custom_mouse_cursor(load("res://cursor_2_hover.png"))
+func _on_emotion_5_mouse_exited():
+	Input.set_custom_mouse_cursor(load("res://cursor_1.png"))
 	hide() 

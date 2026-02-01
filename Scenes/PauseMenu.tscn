@@ -432,3 +432,12 @@ stream = ExtResource("3_5w4ur")
 volume_db = -8.864
 pitch_scale = 1.66
 bus = &"SFX"
+
+[connection signal="mouse_entered" from="Panel/Content/Resume" to="." method="_on_resume_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Content/Resume" to="." method="_on_resume_mouse_exited"]
+[connection signal="mouse_entered" from="Panel/Content/Restart" to="." method="_on_restart_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Content/Restart" to="." method="_on_restart_mouse_exited"]
+[connection signal="mouse_entered" from="Panel/Content/Settings" to="." method="_on_settings_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Content/Settings" to="." method="_on_settings_mouse_exited"]
+[connection signal="mouse_entered" from="Panel/Content/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Content/Quit" to="." method="_on_quit_mouse_exited"]

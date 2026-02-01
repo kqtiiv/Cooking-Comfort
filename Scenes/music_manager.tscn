@@ -1,12 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://fkvcorinnv3q"]
 
 [ext_resource type="Script" uid="uid://ddkganw2c3ne" path="res://Scripts/music_manager.gd" id="1_hsxb6"]
-[ext_resource type="AudioStream" uid="uid://sc1rh6ov8y1t" path="res://Assets/Sounds/PLACEHOLDER.mp3" id="2_sdmu8"]
+[ext_resource type="AudioStream" uid="uid://deb06kwmkvqcy" path="res://Assets/Sounds/cafemusicloop.mp3" id="2_hsxb6"]
 
 [node name="Node3D" type="Node3D"]
 visible = false
 script = ExtResource("1_hsxb6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_sdmu8")
+stream = ExtResource("2_hsxb6")
+volume_db = -3.343
 autoplay = true

@@ -172,7 +172,7 @@ paths = [NodePath("World/Path3D3"), NodePath("World/Path3D2"), NodePath("World/P
 [node name="doorbell" type="AudioStreamPlayer3D" parent="World"]
 transform = Transform3D(-0.12571995, 0.43775925, -0.89025915, 0.061211813, 0.89909226, 0.4334585, 0.99017555, 3.7608143e-09, -0.13982987, -5.65577, 1.5584431, -6.069004)
 stream = ExtResource("7_s1b4b")
-volume_db = -29.176
+volume_db = -15.195
 max_db = 2.647
 emission_angle_enabled = true
 emission_angle_degrees = 65.0

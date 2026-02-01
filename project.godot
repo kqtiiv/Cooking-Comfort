@@ -13,7 +13,7 @@ config_version=5
 config/name="cafe dot"
 run/main_scene="uid://bmw5q3hto54x5"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://ck8f8hd8bwikv"
 "<<<<<<<HEAD[audio]buses/default_bus_layout"=""
 "<<<<<<<HEAD[autoload]MusicManager"="*res://Scenes/music_manager.tscn"
 SoundManager="*res://Scenes/sound_manager.tscn"
@@ -27,6 +27,12 @@ GameManager="*res://Scenes/game_manager.tscn"
 CookingUI="*res://Scenes/cooking.tscn"
 SceneTransition="*res://Scenes/SceneTransition.tscn"
 EmotionSelect="*res://Scenes/EmotionSelect.tscn"
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://dfo7q85nwks55"
 
 [global_group]
 
@@ -62,6 +68,11 @@ back={
 interact={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+"dialogue advance"={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
 ]
 }
 

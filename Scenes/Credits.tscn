@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhqmhmsmdjk4h"]
+
+[ext_resource type="Texture2D" uid="uid://5wtn2apa843m" path="res://Images/endgame_bg.png" id="1_7xmno"]
+[ext_resource type="Script" uid="uid://2u6xcrte7b4e" path="res://Scripts/credits.gd" id="1_iynit"]
+[ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="2_uy3b0"]
+[ext_resource type="StyleBox" uid="uid://c5rvhyq5pgafy" path="res://Scenes/options_uiButtons.tres" id="3_iynit"]
+[ext_resource type="AudioStream" uid="uid://c8lib81jxdfps" path="res://Assets/Sounds/click.mp3" id="5_f64u0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f64u0"]
+texture = ExtResource("1_7xmno")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpub1"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iynit")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_f64u0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -389.5
+offset_top = -234.0
+offset_right = 389.5
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 27
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22745098, 0.53333336, 0.69803923, 1)
+theme_override_colors/font_shadow_color = Color(0.16470589, 0.41960785, 0.5529412, 1)
+theme_override_constants/shadow_offset_x = -4
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_uy3b0")
+theme_override_font_sizes/font_size = 61
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.41568628, 0.18431373, 0.10980392, 1)
+theme_override_colors/font_shadow_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+theme_override_constants/line_spacing = -1
+theme_override_constants/paragraph_spacing = -2
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_uy3b0")
+theme_override_font_sizes/font_size = 30
+text = "Kurami 
+3D Modeling 
+
+Katie 
+Programming
+
+Patchy
+2D Sprites
+
+Zoe
+Design"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_focus_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_constants/h_separation = 4
+theme_override_fonts/font = ExtResource("2_uy3b0")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = ExtResource("3_iynit")
+theme_override_styles/pressed = ExtResource("3_iynit")
+theme_override_styles/hover = ExtResource("3_iynit")
+theme_override_styles/disabled = ExtResource("3_iynit")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lpub1")
+text = "Back"
+
+[node name="button_click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_f64u0")
+volume_db = -3.41
+pitch_scale = 1.88
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="Panel/VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/VBoxContainer/Button" to="." method="_on_button_mouse_exited"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://can3x63vcg8km"
-path="res://.godot/imported/finish1star.png-45e9c63ab639d004bb8ff2a9e069a22e.ctex"
+uid="uid://ck8f8hd8bwikv"
+path="res://.godot/imported/cutesticon.svg-d712bcba532ffc51477d7aed89f83162.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/finish1star.png"
-dest_files=["res://.godot/imported/finish1star.png-45e9c63ab639d004bb8ff2a9e069a22e.ctex"]
+source_file="res://cutesticon.svg"
+dest_files=["res://.godot/imported/cutesticon.svg-d712bcba532ffc51477d7aed89f83162.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

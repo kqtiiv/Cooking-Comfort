@@ -12,7 +12,7 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8ppi"]
 texture = ExtResource("1_3l5kh")
-modulate_color = Color(0.80049086, 0.80049074, 0.80049074, 1)
+modulate_color = Color(0.8, 0.8, 0.8, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5w1wy"]
 bg_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
@@ -96,7 +96,7 @@ anchor_bottom = 0.5
 offset_right = -12.672058
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 8
+size_flags_vertical = 10
 script = ExtResource("1_vxms4")
 button1 = NodePath("EmotionSelect/VBoxContainer/emotion1")
 button2 = NodePath("EmotionSelect/VBoxContainer/emotion2")
@@ -110,11 +110,12 @@ image4 = NodePath("EmotionSelect/Happiness")
 image5 = NodePath("EmotionSelect/Affection")
 
 [node name="bgwippic" type="Panel" parent="."]
-layout_mode = 0
-offset_left = -576.0
-offset_top = -355.0
-offset_right = 579.0
-offset_bottom = 361.0
+layout_mode = 1
+anchors_preset = -1
+offset_left = -589.0
+offset_top = -339.0
+offset_right = 592.0
+offset_bottom = 338.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_s8ppi")
 
 [node name="EmotionSelect" type="Panel" parent="."]
@@ -299,3 +300,14 @@ theme_override_colors/font_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
 theme_override_fonts/font = ExtResource("2_itqyv")
 theme_override_font_sizes/font_size = 30
 text = "Hmmm... I should leave them a note! But which one?"
+
+[connection signal="mouse_entered" from="EmotionSelect/VBoxContainer/emotion1" to="." method="_on_emotion_1_mouse_entered"]
+[connection signal="mouse_exited" from="EmotionSelect/VBoxContainer/emotion1" to="." method="_on_emotion_1_mouse_exited"]
+[connection signal="mouse_entered" from="EmotionSelect/VBoxContainer/emotion2" to="." method="_on_emotion_2_mouse_entered"]
+[connection signal="mouse_exited" from="EmotionSelect/VBoxContainer/emotion2" to="." method="_on_emotion_2_mouse_exited"]
+[connection signal="mouse_entered" from="EmotionSelect/VBoxContainer/emotion3" to="." method="_on_emotion_3_mouse_entered"]
+[connection signal="mouse_exited" from="EmotionSelect/VBoxContainer/emotion3" to="." method="_on_emotion_3_mouse_exited"]
+[connection signal="mouse_entered" from="EmotionSelect/VBoxContainer/emotion4" to="." method="_on_emotion_4_mouse_entered"]
+[connection signal="mouse_exited" from="EmotionSelect/VBoxContainer/emotion4" to="." method="_on_emotion_4_mouse_exited"]
+[connection signal="mouse_entered" from="EmotionSelect/VBoxContainer/emotion5" to="." method="_on_emotion_5_mouse_entered"]
+[connection signal="mouse_exited" from="EmotionSelect/VBoxContainer/emotion5" to="." method="_on_emotion_5_mouse_exited"]
