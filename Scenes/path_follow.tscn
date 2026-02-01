@@ -109,5 +109,12 @@ theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 autowrap_mode = 2
 
+<<<<<<< Updated upstream
+=======
+[node name="Clinks" type="AudioStreamPlayer" parent="Interact"]
+stream = ExtResource("9_cyuvo")
+volume_db = -20.049
+
+>>>>>>> Stashed changes
 [connection signal="body_entered" from="Interact/InteractArea" to="Interact" method="_on_interact_area_body_entered"]
 [connection signal="body_exited" from="Interact/InteractArea" to="Interact" method="_on_interact_area_body_exited"]

@@ -37,7 +37,6 @@ func _process(delta: float) -> void:
 			if required_step == GameManager.CookingStep.RICE_COOKER:
 				if not animation_player.is_playing(): 
 					animation_player.play("rice")
-					AudioEffectDelay 
 					audio.play()
 				
 			elif required_step == GameManager.CookingStep.STOVE:

@@ -15,7 +15,7 @@ var player_in_range: bool = false
 var is_conversing: bool = false
 var current_line_index: int = 0
 @export var npc_dialogues: Array[Array] = [
-	["Welcome in!", "Thanks. Can't wait to have some good food! I've had quite the day. I hope yours has been better than mine. (they let out a soft sigh)\n Do you ever feel extra tired on gloomy days? I get extra groggy myself...\n today is definitely one of those days. Just hoping I can still get some things done later.", 
+	["Welcome in!", "Thanks. Can't wait to have some good food! I've had quite the day. I hope yours has been better than mine. (they let out a soft sigh)\n Do you ever feel tired on gloomy days? I get extra groggy myself...\n today is definitely one of those days. Just hoping I can still get some things done later.", 
 	"Sorry to hear that. 
 	Good thing I have just what you need! 
 	Be right back.", "Wow!! This is perfect!", "Oh-- interesting..."],
