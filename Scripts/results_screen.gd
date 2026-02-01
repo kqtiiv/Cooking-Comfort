@@ -67,7 +67,6 @@ func _on_exit_pressed():
 	await get_tree().create_timer(0.25).timeout 
 	get_tree().quit()
 	
-	
 
 
 func _on_restart_mouse_entered():

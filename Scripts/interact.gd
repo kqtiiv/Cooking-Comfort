@@ -6,6 +6,7 @@ extends Node3D
 
 @onready var waitress_img: Sprite2D = $DialogueUI/WaiterTalk
 @onready var customer_img: Sprite2D = $DialogueUI/CustomerTalk
+@onready var audio = $Clinks
 
 var anim_player: AnimationPlayer 
 var npc_controller: PathFollow3D 
@@ -14,6 +15,7 @@ var player_in_range: bool = false
 # dialogue state
 var is_conversing: bool = false
 var current_line_index: int = 0
+#@export var npc_dialogues: Array[Array] = [["h", "h", "h", "h", "h"], ["h", "h", "h", "h", "h"], ["h", "h", "h", "h", "h"]]
 @export var npc_dialogues: Array[Array] = [
 	["Welcome in!", "Thanks. Can't wait to have some good food! I've had quite the day. I hope yours has been better than mine. (they let out a soft sigh)\n Do you ever feel tired on gloomy days? I get extra groggy myself...\n today is definitely one of those days. Just hoping I can still get some things done later.", 
 	"Sorry to hear that. 
@@ -123,6 +125,7 @@ func trigger_eating_sequence() -> void:
 	plate.visible = true
 	
 	if anim_player:
+		audio.play()
 		anim_player.play("eating")
 		await anim_player.animation_finished
 	
@@ -142,7 +145,7 @@ func trigger_eating_sequence() -> void:
 	if GameManager.npcs_served < 3:
 		GameManager.current_step = GameManager.CookingStep.TALK_TO_CUSTOMER
 	else:
-		SceneTransition.change_scene_to_file("res://scenes/ResultsPage.tscn")
+		SceneTransition.change_scene_to_file("res://Scenes/ResultsScreen.tscn")
 
 
 func _on_interact_area_body_entered(body: Node3D) -> void:
