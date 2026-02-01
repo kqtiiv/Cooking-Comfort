@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://3i6i7utpdhxv"]
+[gd_scene load_steps=42 format=3 uid="uid://3i6i7utpdhxv"]
 
 [ext_resource type="PackedScene" uid="uid://dhhsekj4kfdfx" path="res://Assets/3D/World/environment.glb" id="1_8vsrk"]
 [ext_resource type="Script" uid="uid://c8r0w8ay0pbyh" path="res://Scripts/world.gd" id="1_b2f5p"]
@@ -12,6 +12,12 @@
 [ext_resource type="AudioStream" uid="uid://ko3qh8jpk62o" path="res://Assets/Sounds/dingdong.mp3" id="7_s1b4b"]
 [ext_resource type="PackedScene" uid="uid://brof0gkfufrpq" path="res://Assets/3D/Interactables/plate.glb" id="7_w85lu"]
 [ext_resource type="Script" uid="uid://d0bbviah2ncyb" path="res://Scripts/cooking.gd" id="8_7g1pw"]
+[ext_resource type="PackedScene" uid="uid://bqjh4hyrmdnre" path="res://Assets/3D/World/omurice recipe page.glb" id="9_snxwr"]
+[ext_resource type="PackedScene" uid="uid://vfrh7bs2mh8v" path="res://Assets/3D/Interactables/rice cooker.glb" id="10_e5mp2"]
+[ext_resource type="PackedScene" uid="uid://dcxbbt61cf6xw" path="res://Assets/3D/World/window.glb" id="10_o8t5j"]
+[ext_resource type="PackedScene" uid="uid://sc4xvh310via" path="res://Assets/3D/Interactables/egg.glb" id="14_wwetx"]
+[ext_resource type="Texture2D" uid="uid://cfe43ks62l3lh" path="res://Assets/3D/World/door.png" id="16_wwetx"]
+[ext_resource type="PackedScene" uid="uid://whxe8iylfh7o" path="res://Assets/3D/World/light.glb" id="17_tkw33"]
 [ext_resource type="PackedScene" uid="uid://bhw7ep2i0u5wa" path="res://Assets/3D/World/omurice recipe page.glb" id="9_snxwr"]
 [ext_resource type="PackedScene" uid="uid://brn4rs1o2w6wi" path="res://Assets/3D/World/window.glb" id="10_o8t5j"]
 [ext_resource type="PackedScene" uid="uid://7jwxiw03e3yl" path="res://Scenes/egg.tscn" id="11_e5mp2"]
@@ -77,6 +83,85 @@ _data = {
 }
 point_count = 6
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwetx"]
+albedo_color = Color(0.88446456, 0.5390647, 0.4923318, 1)
+metallic_specular = 0.12
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1ln4"]
+albedo_texture = ExtResource("16_wwetx")
+
+[sub_resource type="Animation" id="Animation_wwetx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e5mp2"]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.81),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -2.3212879, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tkw33"]
+_data = {
+&"RESET": SubResource("Animation_wwetx"),
+&"open": SubResource("Animation_e5mp2")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ki5qo"]
+albedo_color = Color(0.48235294, 0.1882353, 0.1254902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txgp6"]
+albedo_color = Color(0.48235294, 0.1882353, 0.1254902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3w3qn"]
+albedo_color = Color(0.48235294, 0.1882353, 0.1254902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kr6lr"]
+emission = Color(1, 1, 1, 1)
+
 [node name="MainWorld" type="Node3D" node_paths=PackedStringArray("paths")]
 script = ExtResource("1_b2f5p")
 npc_scene = ExtResource("2_7g1pw")
@@ -98,7 +183,7 @@ environment = SubResource("Environment_7g1pw")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="World"]
 transform = Transform3D(-0.8077981, -0.58414173, -0.07899817, -0.31218937, 0.31028765, 0.8979195, -0.50000006, 0.75, -0.43301266, 0, 3.6415045, 0)
 light_color = Color(0.9900157, 0.9219829, 0.85536623, 1)
-light_energy = 0.3
+light_energy = 2.217
 light_indirect_energy = 2.463
 light_specular = 2.366
 shadow_enabled = true
@@ -252,6 +337,98 @@ curve = SubResource("Curve3D_e5mp2")
 
 [node name="Path3D3" type="Path3D" parent="World"]
 curve = SubResource("Curve3D_wwetx")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028930664, 5.03926, -1.5515747)
+size = Vector3(11.670166, 0.001, 13.633179)
+material = SubResource("StandardMaterial3D_wwetx")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10435057, 4.1451807, 1.9974477)
+light_color = Color(1, 0.7294118, 0.5294118, 1)
+light_energy = 1.573
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.405
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10435057, 4.1451807, -4.002552)
+light_color = Color(1, 0.7294118, 0.5294118, 1)
+light_energy = 1.573
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.405
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(0.038890876, -0.58964753, 0.80672383, 0.028392999, 0.8076607, 0.58896357, -0.99884, 0, 0.0481525, 5.767559, 3.0479205, 0.88289356)
+light_color = Color(1, 0.9411765, 0.8980392, 1)
+light_energy = 0.354
+
+[node name="DirectionalLight3D5" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(-0.99884003, 2.6914002e-08, 0.04815247, 0.008782545, 0.9832263, 0.18217821, -0.047344767, 0.1823898, -0.98208576, 2.6408272, 2.9102037, -8.073249)
+light_color = Color(1, 0.9411765, 0.8980392, 1)
+light_energy = 0.139
+
+[node name="DirectionalLight3D6" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(-0.99884003, 2.6914002e-08, 0.04815247, 0.008782545, 0.9832263, 0.18217821, -0.047344767, 0.1823898, -0.98208576, -2.3187337, 2.874428, -8.073249)
+light_color = Color(1, 0.9411765, 0.8980392, 1)
+light_energy = 0.215
+light_indirect_energy = 0.426
+light_volumetric_fog_energy = 1.43
+light_angular_distance = 31.88
+light_specular = 0.0
+
+[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(0.038890876, -0.58964753, 0.80672383, 0.028392999, 0.8076607, 0.58896357, -0.99884, 0, 0.0481525, 5.757121, 3.0479205, -4.7339916)
+light_color = Color(1, 0.9411765, 0.8980392, 1)
+light_energy = 0.426
+
+[node name="DirectionalLight3D4" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(-0.041414328, -0.5101827, -0.85906845, 0.02456657, -0.86006606, 0.5095909, -0.99884, 0, 0.048152503, -5.729184, 3.0479205, -2.438703)
+light_color = Color(1, 0.9411765, 0.8980392, 1)
+light_energy = 0.336
+directional_shadow_fade_start = 0.526
+directional_shadow_max_distance = 6.4
+
+[node name="Hinge" type="Node3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.705978, 1.0499337, -5.249178)
+
+[node name="Door" type="CSGBox3D" parent="World/Hinge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.76950693)
+use_collision = true
+size = Vector3(0.07861328, 2.110443, 1.6042175)
+material = SubResource("StandardMaterial3D_u1ln4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Hinge"]
+libraries = {
+&"": SubResource("AnimationLibrary_tkw33")
+}
+
+[node name="Doorway" type="CSGBox3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -5.631398, 2.21466, -6.0406504)
+size = Vector3(0.08746338, 2.0074005, 0.22241211)
+material = SubResource("StandardMaterial3D_ki5qo")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Doorway"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.891541, -1.4095757)
+size = Vector3(0.08746338, 2.6101685, 0.22241211)
+material = SubResource("StandardMaterial3D_txgp6")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/Doorway"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.8945484, -1.4095757)
+size = Vector3(0.08746338, 2.6101685, 0.22241211)
+material = SubResource("StandardMaterial3D_3w3qn")
+
+[node name="light" parent="World" instance=ExtResource("17_tkw33")]
+transform = Transform3D(0.705, 0, 0, 0, 0.705, 0, 0, 0, 0.705, -0.09655237, 4.482327, 1.9988976)
+
+[node name="light2" parent="World" instance=ExtResource("17_tkw33")]
+transform = Transform3D(0.705, 0, 0, 0, 0.705, 0, 0, 0, 0.705, -0.09655237, 4.482327, -4.0245233)
+
+[node name="Outside" type="CSGBox3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.774748, 0.84973145, -6.199449)
+size = Vector3(0.12689209, 2.699463, 2.206665)
+material = SubResource("StandardMaterial3D_kr6lr")
 
 [node name="PauseMenu" parent="." instance=ExtResource("1_r7jfx")]
 
