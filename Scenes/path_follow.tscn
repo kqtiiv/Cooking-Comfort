@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ejtf25hfn0ny"]
+[gd_scene load_steps=11 format=3 uid="uid://ejtf25hfn0ny"]
 
 [ext_resource type="Script" uid="uid://daxcvu8djc60i" path="res://Scripts/path_follow.gd" id="1_rwv02"]
 [ext_resource type="PackedScene" uid="uid://dxtip61m4v7rx" path="res://Assets/3D/Sprites/customer model.glb" id="2_tqmci"]
@@ -6,6 +6,8 @@
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="4_lk7k8"]
 [ext_resource type="PackedScene" uid="uid://ctc8smku145q0" path="res://Assets/3D/Interactables/omurice.glb" id="5_bfbkk"]
 [ext_resource type="Script" uid="uid://fngeonyditsh" path="res://Scripts/dialogue_manager.gd" id="5_lk7k8"]
+[ext_resource type="Texture2D" uid="uid://drva6mgjhdxrq" path="res://Images/dialogue_ui/waiter talk.png" id="7_e3qct"]
+[ext_resource type="Texture2D" uid="uid://bt8wxse22cfh2" path="res://Images/dialogue_ui/customer talk.png" id="8_cyuvo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vchtg"]
 size = Vector3(2.0572145, 1.9791641, 1.6596648)
@@ -59,13 +61,24 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -350.0
+offset_left = -404.5
 offset_top = -198.0
-offset_right = 350.0
+offset_right = 404.5
 offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("5_lk7k8")
+
+[node name="WaiterTalk" type="Sprite2D" parent="Interact/DialogueUI"]
+position = Vector2(10.5, -91)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_e3qct")
+
+[node name="CustomerTalk" type="Sprite2D" parent="Interact/DialogueUI"]
+visible = false
+position = Vector2(831.5, -67)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_cyuvo")
 
 [node name="storybg" type="Panel" parent="Interact/DialogueUI"]
 layout_mode = 1

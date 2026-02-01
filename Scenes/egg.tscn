@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://7jwxiw03e3yl"]
+
+[ext_resource type="PackedScene" uid="uid://sc4xvh310via" path="res://Assets/3D/Interactables/egg.glb" id="1_1iuog"]
+[ext_resource type="AudioStream" uid="uid://btjoxpmbrnmbq" path="res://Assets/Sounds/eggcrack.mp3" id="2_85tk0"]
+
+[node name="egg" instance=ExtResource("1_1iuog")]
+
+[node name="egg1" parent="." index="0"]
+transform = Transform3D(0.0010592279, 0.07197972, 9.561373e-09, -0.05273848, 0.001445679, -9.371268e-09, -7.085874e-09, -9.478809e-09, 0.07117741, -2.8627622, 1.2843477, 6.539037)
+
+[node name="egg2" parent="." index="1"]
+transform = Transform3D(0.0010592404, 0.07197972, 0, -0.05273848, 0.0014456962, 0, 0, 0, 0.07117741, -2.8627622, 1.2843477, 6.539037)
+
+[node name="sfx" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("2_85tk0")
