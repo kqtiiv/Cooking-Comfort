@@ -56,7 +56,7 @@ func _on_emotion_selected(selected_image: CanvasItem, index: int) -> void:
 	_hide_all_images()
 	selected_image.show()
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(1.5).timeout
 	
 
 	if index - 1 < emotion_names.size():
