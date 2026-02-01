@@ -21,18 +21,19 @@ var current_line_index: int = 0
 	I get extra groggy myself... today is definitely one of those days. 
 	Just hoping I can still get some things done later.", "Sorry to hear that. 
 	Good thing I have just what you need! 
-	Be right back.", "hapy", "sad"],
+	Be right back.", "Wow!! This is perfect!", "Oh-- interesting..."],
 	["Hello!", "Hey... (there's an awkwardly long pause) 
 	I'll just have one order of the omurice... thanks.", "Sure thing. 
-	One omurice coming right up.", "hapy", "sad"],
+	One omurice coming right up.", "Wow!! This is perfect!", "Oh-- interesting..."],
 	["Hi, how are you today?", "I'm doing pretty good. 
 	It smells fantastic in here! Makes me feel like I'm at home in my moms kitchen. 
 	Now that I think of it, it's been far too long since I've seen her. 
 	I wonder if my kids would like her cooking. 
 	(their eyes shine with a glint of excitement) 
 	I should plan a trip for all of us to go and visit!", "Wow! That sounds like it would be a great time. 
-	I'm sure your moms cooking is excellent I can only hope you like mine just as much. 
-	I'll go get it started now.", "hapy", "sad"]
+	I'm sure your moms cooking is excellent I
+	can only hope you like mine just as much. 
+	I'll go get it started now.", "Wow!! This is perfect!", "Oh-- interesting..."]
 ]
 
 func _ready() -> void:
@@ -145,7 +146,10 @@ func trigger_eating_sequence() -> void:
 	plate.visible = false
 	GameManager.is_dialogue_active = false
 	GameManager.request_next_npc.emit()
-	GameManager.current_step = GameManager.CookingStep.TALK_TO_CUSTOMER
+	if GameManager.npcs_served < 3:
+		GameManager.current_step = GameManager.CookingStep.TALK_TO_CUSTOMER
+	else:
+		get_tree().change_scene_to_file("res://scenes/ResultsPage.tscn")
 
 
 func _on_interact_area_body_entered(body: Node3D) -> void:
