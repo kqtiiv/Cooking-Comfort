@@ -12,6 +12,11 @@
 [ext_resource type="AudioStream" uid="uid://ko3qh8jpk62o" path="res://Assets/Sounds/dingdong.mp3" id="7_s1b4b"]
 [ext_resource type="PackedScene" uid="uid://brof0gkfufrpq" path="res://Assets/3D/Interactables/plate.glb" id="7_w85lu"]
 [ext_resource type="Script" uid="uid://d0bbviah2ncyb" path="res://Scripts/cooking.gd" id="8_7g1pw"]
+[ext_resource type="PackedScene" uid="uid://bqjh4hyrmdnre" path="res://Assets/3D/World/omurice recipe page.glb" id="9_snxwr"]
+[ext_resource type="PackedScene" uid="uid://dcxbbt61cf6xw" path="res://Assets/3D/World/window.glb" id="10_o8t5j"]
+[ext_resource type="PackedScene" uid="uid://7jwxiw03e3yl" path="res://Scenes/egg.tscn" id="11_e5mp2"]
+[ext_resource type="PackedScene" uid="uid://dhtx04oqboo6s" path="res://Scenes/rice_cooker.tscn" id="12_e5mp2"]
+[ext_resource type="Texture2D" uid="uid://cfe43ks62l3lh" path="res://Assets/3D/World/door.png" id="16_wwetx"]
 [ext_resource type="PackedScene" uid="uid://bhw7ep2i0u5wa" path="res://Assets/3D/World/omurice recipe page.glb" id="9_snxwr"]
 [ext_resource type="PackedScene" uid="uid://brn4rs1o2w6wi" path="res://Assets/3D/World/window.glb" id="10_o8t5j"]
 [ext_resource type="PackedScene" uid="uid://7jwxiw03e3yl" path="res://Scenes/egg.tscn" id="11_e5mp2"]
@@ -115,17 +120,18 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_e5mp2"]
 resource_name = "Open"
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 2
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.81),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.81, 3, 3.99),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -2.3212879, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, -2.3212879, 0), Vector3(0, -2.3212879, 0), Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -423,6 +429,7 @@ transform = Transform3D(0.705, 0, 0, 0, 0.705, 0, 0, 0, 0.705, -0.09655237, 4.48
 
 [node name="Outside" type="CSGBox3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.774748, 0.84973145, -6.199449)
+use_collision = true
 size = Vector3(0.12689209, 2.699463, 2.206665)
 material = SubResource("StandardMaterial3D_kr6lr")
 
