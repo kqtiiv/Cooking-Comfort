@@ -1,6 +1,6 @@
 extends Control
 
-@export var emotion_names: Array[String] = ["Love", "Determination", "Nostalgia", "Happiness", "Affection"]
+@export var emotion_names: Array[String] = ["Love", "Motivation", "Nostalgia", "Happiness", "Kindness"]
 
 @export_group("Buttons")
 @export var button1: Button
