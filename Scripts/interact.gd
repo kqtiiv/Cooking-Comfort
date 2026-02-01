@@ -14,27 +14,28 @@ var player_in_range: bool = false
 # dialogue state
 var is_conversing: bool = false
 var current_line_index: int = 0
-@export var npc_dialogues: Array[Array] = [
-	["Welcome in!", "Thanks. Can't wait to have some good food! 
-	I've had quite the day, I hope yours has been better than mine. 
-	(they let out a soft sigh) Do you ever feel extra tired on gloomy days? 
-	I get extra groggy myself... today is definitely one of those days. 
-	Just hoping I can still get some things done later.", "Sorry to hear that. 
-	Good thing I have just what you need! 
-	Be right back.", "Wow!! This is perfect!", "Oh-- interesting..."],
-	["Hello!", "Hey... (there's an awkwardly long pause) 
-	I'll just have one order of the omurice... thanks.", "Sure thing. 
-	One omurice coming right up.", "Wow!! This is perfect!", "Oh-- interesting..."],
-	["Hi, how are you today?", "I'm doing pretty good. 
-	It smells fantastic in here! Makes me feel like I'm at home in my moms kitchen. 
-	Now that I think of it, it's been far too long since I've seen her. 
-	I wonder if my kids would like her cooking. 
-	(their eyes shine with a glint of excitement) 
-	I should plan a trip for all of us to go and visit!", "Wow! That sounds like it would be a great time. 
-	I'm sure your moms cooking is excellent I
-	can only hope you like mine just as much. 
-	I'll go get it started now.", "Wow!! This is perfect!", "Oh-- interesting..."]
-]
+@export var npc_dialogues: Array[Array] = [["h", "h", "h", "h", "h"], ["h", "h", "h", "h", "h"], ["h", "h", "h", "h", "h"]]
+#@export var npc_dialogues: Array[Array] = [
+	#["Welcome in!", "Thanks. Can't wait to have some good food! 
+	#I've had quite the day, I hope yours has been better than mine. 
+	#(they let out a soft sigh) Do you ever feel extra tired on gloomy days? 
+	#I get extra groggy myself... today is definitely one of those days. 
+	#Just hoping I can still get some things done later.", "Sorry to hear that. 
+	#Good thing I have just what you need! 
+	#Be right back.", "Wow!! This is perfect!", "Oh-- interesting..."],
+	#["Hello!", "Hey... (there's an awkwardly long pause) 
+	#I'll just have one order of the omurice... thanks.", "Sure thing. 
+	#One omurice coming right up.", "Wow!! This is perfect!", "Oh-- interesting..."],
+	#["Hi, how are you today?", "I'm doing pretty good. 
+	#It smells fantastic in here! Makes me feel like I'm at home in my moms kitchen. 
+	#Now that I think of it, it's been far too long since I've seen her. 
+	#I wonder if my kids would like her cooking. 
+	#(their eyes shine with a glint of excitement) 
+	#I should plan a trip for all of us to go and visit!", "Wow! That sounds like it would be a great time. 
+	#I'm sure your moms cooking is excellent I
+	#can only hope you like mine just as much. 
+	#I'll go get it started now.", "Wow!! This is perfect!", "Oh-- interesting..."]
+#]
 
 func _ready() -> void:
 	prompt.visible = false

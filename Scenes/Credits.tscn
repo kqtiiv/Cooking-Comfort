@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhqmhmsmdjk4h"]
+[gd_scene load_steps=8 format=3 uid="uid://c5m158wokloq6"]
 
 [ext_resource type="Texture2D" uid="uid://5wtn2apa843m" path="res://Images/endgame_bg.png" id="1_7xmno"]
-[ext_resource type="Script" uid="uid://2u6xcrte7b4e" path="res://Scripts/credits.gd" id="1_iynit"]
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_iynit"]
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="2_uy3b0"]
 [ext_resource type="StyleBox" uid="uid://c5rvhyq5pgafy" path="res://Scenes/options_uiButtons.tres" id="3_iynit"]
 [ext_resource type="AudioStream" uid="uid://c8lib81jxdfps" path="res://Assets/Sounds/click.mp3" id="5_f64u0"]
@@ -11,7 +11,7 @@ texture = ExtResource("1_7xmno")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpub1"]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control" node_paths=PackedStringArray("Back")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iynit")
+Back = NodePath("Panel/VBoxContainer/Button")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
