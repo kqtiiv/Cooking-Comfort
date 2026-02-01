@@ -2,7 +2,6 @@ extends Control
 
 @onready var text_label = $storybg/dialogue
 @export var type_speed: float = 0.05
-@export var kitchen_position: Vector3 = Vector3(10, 1, 5) 
 
 func _ready() -> void:
 	hide()
@@ -10,6 +9,11 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS 
 
 func display_text(content: String = "...") -> void:
+	# If the string is empty, we assume the conversation is over
+	if content == "":
+		_close_dialogue()
+		return
+
 	show()
 	GameManager.is_dialogue_active = true 
 	text_label.text = content
@@ -24,20 +28,15 @@ func _input(event: InputEvent) -> void:
 	var is_interact = event.is_action_pressed("interact")
 
 	if GameManager.is_dialogue_active and (is_interact or is_click):
+		# If text is still typing, skip to the end
 		if text_label.visible_ratio < 1.0:
 			text_label.visible_ratio = 1.0
+			get_viewport().set_input_as_handled() 
+		
+		# If text is finished typing...
 		else:
-			exit_dialogue()
+			pass
 
-func exit_dialogue() -> void:
+func _close_dialogue() -> void:
 	hide()
 	GameManager.is_dialogue_active = false
-	begin_cooking()
-
-func begin_cooking() -> void:	
-	if GameManager.current_step == GameManager.CookingStep.TALK_TO_CUSTOMER:
-		GameManager.current_step = GameManager.CookingStep.RICE_COOKER
-		print("Go to Rice Cooker")
-	elif GameManager.current_step == GameManager.CookingStep.SERVE:
-		GameManager.current_step = GameManager.CookingStep.TALK_TO_CUSTOMER
-		print("Talk to customer")
