@@ -14,6 +14,7 @@ var player_in_range: bool = false
 # dialogue state
 var is_conversing: bool = false
 var current_line_index: int = 0
+#@export var npc_dialogues: Array[Array] = [["h", "h", "h", "h", "h"], ["h", "h", "h", "h", "h"], ["h", "h", "h", "h", "h"]]
 @export var npc_dialogues: Array[Array] = [
 	["Welcome in!", "Thanks. Can't wait to have some good food! 
 	I've had quite the day, I hope yours has been better than mine. 

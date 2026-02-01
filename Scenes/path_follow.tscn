@@ -52,7 +52,7 @@ font = ExtResource("4_lk7k8")
 font_size = 42
 
 [node name="omurice" parent="Interact" instance=ExtResource("5_bfbkk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5849352, 0.75689423, 6.455614)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5849352, 0.80317736, 6.455614)
 
 [node name="DialogueUI" type="Control" parent="Interact"]
 layout_mode = 3
