@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bpswi6dsm0f4s" path="res://Images/omurice/heartsEgg.png" id="6_dkhmf"]
 [ext_resource type="Texture2D" uid="uid://cafw5cfxinhqx" path="res://Images/omurice/keepdreaminEgg.png" id="7_cnxox"]
 [ext_resource type="Texture2D" uid="uid://bsc6wb8reglod" path="res://Images/omurice/affection.png" id="8_70471"]
+[ext_resource type="StyleBox" uid="uid://tsarjyn853c2" path="res://Scenes/EmotionSelect.tres" id="10_cbffl"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8ppi"]
 texture = ExtResource("1_3l5kh")
@@ -23,18 +24,6 @@ corner_radius_bottom_left = 20
 shadow_color = Color(0.9843137, 0.73333335, 0.25490198, 1)
 shadow_size = 5
 shadow_offset = Vector2(3.72, 2.455)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w1rj"]
-bg_color = Color(0.9843137, 0.73333335, 0.25490198, 1)
-border_color = Color(0.8, 0.8, 0.8, 0)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_left = 20.0
-expand_margin_top = 5.0
-expand_margin_right = 20.0
-expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3l5kh"]
 bg_color = Color(0.9607843, 0.74509805, 0.52156866, 1)
@@ -198,10 +187,11 @@ theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.7215686
 theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("2_itqyv")
 theme_override_font_sizes/font_size = 23
-theme_override_styles/normal = SubResource("StyleBoxFlat_7w1rj")
+theme_override_styles/normal = ExtResource("10_cbffl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3l5kh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_itqyv")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_s8ppi")
+theme_override_styles/disabled = ExtResource("10_cbffl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3sgvc")
 text = "Admiration"
 icon_alignment = 1
@@ -217,10 +207,11 @@ theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.7215686
 theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("2_itqyv")
 theme_override_font_sizes/font_size = 23
-theme_override_styles/normal = SubResource("StyleBoxFlat_7w1rj")
+theme_override_styles/normal = ExtResource("10_cbffl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3l5kh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_itqyv")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_s8ppi")
+theme_override_styles/disabled = ExtResource("10_cbffl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3sgvc")
 text = "Motivation"
 icon_alignment = 1
@@ -236,10 +227,11 @@ theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.7215686
 theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("2_itqyv")
 theme_override_font_sizes/font_size = 23
-theme_override_styles/normal = SubResource("StyleBoxFlat_7w1rj")
+theme_override_styles/normal = ExtResource("10_cbffl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3l5kh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_itqyv")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_s8ppi")
+theme_override_styles/disabled = ExtResource("10_cbffl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3sgvc")
 text = "Nostalgia"
 icon_alignment = 1
@@ -255,10 +247,11 @@ theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.7215686
 theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("2_itqyv")
 theme_override_font_sizes/font_size = 23
-theme_override_styles/normal = SubResource("StyleBoxFlat_7w1rj")
+theme_override_styles/normal = ExtResource("10_cbffl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3l5kh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_itqyv")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_s8ppi")
+theme_override_styles/disabled = ExtResource("10_cbffl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3sgvc")
 text = "Happiness"
 icon_alignment = 1
@@ -274,10 +267,11 @@ theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.7215686
 theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("2_itqyv")
 theme_override_font_sizes/font_size = 23
-theme_override_styles/normal = SubResource("StyleBoxFlat_7w1rj")
+theme_override_styles/normal = ExtResource("10_cbffl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3l5kh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_itqyv")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_s8ppi")
+theme_override_styles/disabled = ExtResource("10_cbffl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3sgvc")
 text = " Kindness "
 icon_alignment = 1

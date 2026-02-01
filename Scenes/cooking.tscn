@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c42t5s75pjeur"]
+[gd_scene load_steps=7 format=3 uid="uid://c42t5s75pjeur"]
 
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="1_mihmv"]
 [ext_resource type="Script" uid="uid://bgoywohgbvvy7" path="res://Scripts/objectives.gd" id="1_v6t1i"]
 [ext_resource type="Texture2D" uid="uid://djr0mc6ojpoyc" path="res://Images/progressbar.png" id="3_kqqjs"]
-[ext_resource type="AudioStream" uid="uid://cruvmww2eklhv" path="res://Assets/Sounds/Pop.mp3" id="4_jhubm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6t1i"]
 bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
@@ -92,8 +91,3 @@ theme_override_colors/font_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
 theme_override_fonts/font = ExtResource("1_mihmv")
 theme_override_styles/background = SubResource("StyleBoxFlat_kqqjs")
 theme_override_styles/fill = SubResource("StyleBoxTexture_jhubm")
-
-[node name="pop" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_jhubm")
-volume_db = -12.97
-pitch_scale = 1.38

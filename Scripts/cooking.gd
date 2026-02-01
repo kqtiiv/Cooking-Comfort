@@ -10,7 +10,7 @@ extends Node3D
 @onready var animation_player: AnimationPlayer = $Interact/AnimationPlayer
 
 
-
+var flag: bool = false
 var is_holding: bool = false
 var current_hold_timer: float = 0.0
 var player_in_range: bool = false
@@ -37,14 +37,17 @@ func _process(delta: float) -> void:
 			if required_step == GameManager.CookingStep.RICE_COOKER:
 				if not animation_player.is_playing(): 
 					animation_player.play("rice")
+					AudioEffectDelay 
 					audio.play()
 				
 			elif required_step == GameManager.CookingStep.STOVE:
 				animation_obj.show() 
-				if not animation_player.is_playing(): 
+				if not animation_player.is_playing() and not flag: 
 					animation_player.play("egg")
 					animation_player.play("Sphere_001Action")
 					audio.play()
+					await audio.finished
+					flag = true
 			
 			if current_hold_timer >= hold_time:
 				complete_interaction()
@@ -67,6 +70,7 @@ func complete_interaction():
 	current_hold_timer = 0.0
 	player_in_range = false
 	reset_hold()
+	flag = false
 	print("Step Complete! Next: ", next_step)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
