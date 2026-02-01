@@ -18,6 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://sc4xvh310via" path="res://Assets/3D/Interactables/egg.glb" id="14_wwetx"]
 [ext_resource type="Texture2D" uid="uid://cfe43ks62l3lh" path="res://Assets/3D/World/door.png" id="16_wwetx"]
 [ext_resource type="PackedScene" uid="uid://whxe8iylfh7o" path="res://Assets/3D/World/light.glb" id="17_tkw33"]
+[ext_resource type="PackedScene" uid="uid://bhw7ep2i0u5wa" path="res://Assets/3D/World/omurice recipe page.glb" id="9_snxwr"]
+[ext_resource type="PackedScene" uid="uid://brn4rs1o2w6wi" path="res://Assets/3D/World/window.glb" id="10_o8t5j"]
+[ext_resource type="PackedScene" uid="uid://7jwxiw03e3yl" path="res://Scenes/egg.tscn" id="11_e5mp2"]
+[ext_resource type="PackedScene" uid="uid://dhtx04oqboo6s" path="res://Scenes/rice_cooker.tscn" id="12_e5mp2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dnhx3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -277,9 +281,7 @@ text = "E"
 font = ExtResource("5_0e82a")
 font_size = 42
 
-[node name="Interact" parent="World/environment/Cooking" instance=ExtResource("14_wwetx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02404046, 0.00306499, -0.0148797035)
-visible = false
+[node name="Interact" parent="World/environment/Cooking" instance=ExtResource("11_e5mp2")]
 
 [node name="CookRice" type="Node3D" parent="World/environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.402732, 0, 0)
@@ -287,8 +289,8 @@ script = ExtResource("8_7g1pw")
 required_step = 1
 next_step = 2
 
-[node name="Interact" parent="World/environment/CookRice" instance=ExtResource("10_e5mp2")]
-transform = Transform3D(0.998066, -0.062163427, 0, 0.062163427, 0.998066, 0, 0, 0, 1, 0.3549415, -0.028080463, -0.20781732)
+[node name="Interact" parent="World/environment/CookRice" instance=ExtResource("12_e5mp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12862158, 0, -0.250695)
 
 [node name="RiceArea" type="Area3D" parent="World/environment/CookRice"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0215499, -0.05114758, 6.4616194)

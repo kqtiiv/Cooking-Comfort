@@ -19,13 +19,28 @@ extends Control
 func _ready() -> void:
 	hide()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	_hide_all_images()
+	
+	visibility_changed.connect(_on_visibility_changed)
 	
 	button1.pressed.connect(_on_emotion_selected.bind(image1, 1))
 	button2.pressed.connect(_on_emotion_selected.bind(image2, 2))
 	button3.pressed.connect(_on_emotion_selected.bind(image3, 3))
 	button4.pressed.connect(_on_emotion_selected.bind(image4, 4))
 	button5.pressed.connect(_on_emotion_selected.bind(image5, 5))
+
+
+func _on_visibility_changed() -> void:
+	if visible:
+		_set_buttons_disabled(false) 
+		_hide_all_images()        
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+func _set_buttons_disabled(state: bool) -> void:
+	if button1: button1.disabled = state
+	if button2: button2.disabled = state
+	if button3: button3.disabled = state
+	if button4: button4.disabled = state
+	if button5: button5.disabled = state
 
 func _hide_all_images() -> void:
 	if image1: image1.hide()
@@ -34,15 +49,20 @@ func _hide_all_images() -> void:
 	if image4: image4.hide()
 	if image5: image5.hide()
 
-
 func _on_emotion_selected(selected_image: CanvasItem, index: int) -> void:
+
+	_set_buttons_disabled(true)
+	
 	_hide_all_images()
 	selected_image.show()
-	await get_tree().create_timer(1.5).timeout
-	var chosen_emotion = emotion_names[index]
-	GameManager.npc_emotions.append(chosen_emotion)
 	
-	# Check if we have served all 3 NPCs
+	await get_tree().create_timer(1.5).timeout
+	
+
+	if index - 1 < emotion_names.size():
+		var chosen_emotion = emotion_names[index - 1]
+		GameManager.npc_emotions.append(chosen_emotion)
+	
 	if GameManager.npcs_served >= GameManager.MAX_NPCS:
 		_go_to_results()
 	else:
@@ -53,4 +73,4 @@ func _go_to_results() -> void:
 
 func _return_to_kitchen() -> void:
 	GameManager.current_step = GameManager.CookingStep.SERVE
-	hide()
+	hide() 

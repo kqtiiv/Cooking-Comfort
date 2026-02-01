@@ -4,20 +4,24 @@ extends Node3D
 @export var next_step: GameManager.CookingStep
 @export var hold_time: float = 2.0
 
-
+@onready var audio = $Interact/sfx
 @onready var prompt: Label3D = $Prompt
 @onready var animation_obj: Node3D = $Interact
 @onready var animation_player: AnimationPlayer = $Interact/AnimationPlayer
-@onready var pop = $pop
-
 
 var is_holding: bool = false
 var current_hold_timer: float = 0.0
 var player_in_range: bool = false
 
-
 func _ready() -> void:
 	prompt.visible = false
+	GameManager.start_new_order.connect(_reset_station)
+
+func _reset_station():
+	is_holding = false
+	current_hold_timer = 0.0
+	if animation_obj: animation_obj.hide() # Hides the cooked food
+	if animation_player: animation_player.stop()
 
 func _process(delta: float) -> void:
 	if player_in_range and GameManager.current_step == required_step:
@@ -29,12 +33,16 @@ func _process(delta: float) -> void:
 			GameManager.send_hold_data(percent, true)
 			
 			if required_step == GameManager.CookingStep.RICE_COOKER:
-				animation_player.play("rice")
-			
+				if not animation_player.is_playing(): 
+					animation_player.play("rice")
+					audio.play()
+				
 			elif required_step == GameManager.CookingStep.STOVE:
-				animation_obj.show()
-				animation_player.play("egg")
-				animation_player.play("Sphere_001Action")
+				animation_obj.show() 
+				if not animation_player.is_playing(): 
+					animation_player.play("egg")
+					animation_player.play("Sphere_001Action")
+					audio.play()
 			
 			if current_hold_timer >= hold_time:
 				complete_interaction()
@@ -53,6 +61,9 @@ func reset_hold():
 
 func complete_interaction():
 	GameManager.current_step = next_step
+	is_holding= false
+	current_hold_timer = 0.0
+	player_in_range = false
 	reset_hold()
 	print("Step Complete! Next: ", next_step)
 

@@ -11,10 +11,13 @@ var npc_emotions: Array[String] = []
 var npcs_served: int = 0
 const MAX_NPCS: int = 3
 
+signal start_new_order 
+
 func reset_game_state():
 	npc_emotions.clear()
 	npcs_served = 0
 	current_step = CookingStep.TALK_TO_CUSTOMER
+	start_new_order.emit()
 
 signal update_hold_ui(percentage: float, is_visible: bool)
 
