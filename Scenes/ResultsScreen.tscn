@@ -1,17 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://b246gy54eqbls"]
+[gd_scene load_steps=14 format=3 uid="uid://b246gy54eqbls"]
 
 [ext_resource type="Script" uid="uid://yjli7eomq61e" path="res://Scripts/results_screen.gd" id="1_jxlxw"]
 [ext_resource type="Texture2D" uid="uid://com52vqwf6n3c" path="res://Images/omurice/3star.png" id="2_vcfm3"]
 [ext_resource type="Texture2D" uid="uid://bl5da8x6k3bab" path="res://Images/omurice/2star.png" id="3_s5hmk"]
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="3_ykr4e"]
 [ext_resource type="Texture2D" uid="uid://d2cvsx2mr878j" path="res://Images/omurice/1star.png" id="4_7wt1v"]
-[ext_resource type="StyleBox" path="res://endgame_buttons.tres" id="4_gnyy0"]
+[ext_resource type="StyleBox" uid="uid://b8ab2apfhfhjl" path="res://endgame_buttons.tres" id="4_gnyy0"]
 [ext_resource type="Texture2D" uid="uid://bofbfwwn8f367" path="res://Images/resultsbg.png" id="5_s5hmk"]
 [ext_resource type="Texture2D" uid="uid://di6dktdk4r50p" path="res://Images/omurice/0star.png" id="8_s5hmk"]
 [ext_resource type="AudioStream" uid="uid://c8lib81jxdfps" path="res://Assets/Sounds/click.mp3" id="9_7wt1v"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v8ikh"]
 texture = ExtResource("5_s5hmk")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7wt1v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcfm3"]
 bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
@@ -96,6 +98,7 @@ theme_override_styles/normal = ExtResource("4_gnyy0")
 theme_override_styles/pressed = ExtResource("4_gnyy0")
 theme_override_styles/hover = ExtResource("4_gnyy0")
 theme_override_styles/hover_pressed = ExtResource("4_gnyy0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wt1v")
 text = "Restart"
 
 [node name="Credits" type="Button" parent="background/PanelContainer"]
@@ -111,6 +114,7 @@ theme_override_styles/normal = ExtResource("4_gnyy0")
 theme_override_styles/pressed = ExtResource("4_gnyy0")
 theme_override_styles/hover = ExtResource("4_gnyy0")
 theme_override_styles/hover_pressed = ExtResource("4_gnyy0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wt1v")
 text = " Credits "
 
 [node name="Exit" type="Button" parent="background/PanelContainer"]
@@ -126,6 +130,7 @@ theme_override_styles/normal = ExtResource("4_gnyy0")
 theme_override_styles/pressed = ExtResource("4_gnyy0")
 theme_override_styles/hover = ExtResource("4_gnyy0")
 theme_override_styles/hover_pressed = ExtResource("4_gnyy0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7wt1v")
 text = "  Exit  "
 
 [node name="storybg" type="Panel" parent="background"]

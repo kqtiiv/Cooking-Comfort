@@ -1,11 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dhtx04oqboo6s"]
 
 [ext_resource type="PackedScene" uid="uid://vfrh7bs2mh8v" path="res://Assets/3D/Interactables/rice cooker.glb" id="1_at584"]
-<<<<<<< Updated upstream
-[ext_resource type="AudioStream" uid="uid://doo7jqi2og6vl" path="res://Assets/Sounds/clinks.mp3" id="2_41a3j"]
-=======
 [ext_resource type="AudioStream" uid="uid://cruvmww2eklhv" path="res://Assets/Sounds/Pop.mp3" id="2_at584"]
->>>>>>> Stashed changes
 
 [node name="rice cooker" instance=ExtResource("1_at584")]
 
@@ -13,10 +9,6 @@
 transform = Transform3D(1.3655008, 0.12002991, -0.18560597, -0.11893626, 1.3780571, 0.016166434, 0.18630873, 2.5765496e-09, 1.3706706, 0.7732618, 1.1046972, 6.8338046)
 
 [node name="sfx" type="AudioStreamPlayer" parent="." index="2"]
-<<<<<<< Updated upstream
-stream = ExtResource("2_41a3j")
-=======
 stream = ExtResource("2_at584")
-volume_db = -30.072
-pitch_scale = 0.59
->>>>>>> Stashed changes
+volume_db = -15.036
+pitch_scale = 0.69

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ejtf25hfn0ny"]
+[gd_scene load_steps=12 format=3 uid="uid://ejtf25hfn0ny"]
 
 [ext_resource type="Script" uid="uid://daxcvu8djc60i" path="res://Scripts/path_follow.gd" id="1_rwv02"]
 [ext_resource type="PackedScene" uid="uid://dxtip61m4v7rx" path="res://Assets/3D/Sprites/customer model.glb" id="2_tqmci"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="4_lk7k8"]
 [ext_resource type="PackedScene" uid="uid://ctc8smku145q0" path="res://Assets/3D/Interactables/omurice.glb" id="5_bfbkk"]
 [ext_resource type="Script" uid="uid://fngeonyditsh" path="res://Scripts/dialogue_manager.gd" id="5_lk7k8"]
+[ext_resource type="AudioStream" uid="uid://doo7jqi2og6vl" path="res://Assets/Sounds/clinks.mp3" id="6_cyuvo"]
 [ext_resource type="Texture2D" uid="uid://drva6mgjhdxrq" path="res://Images/dialogue_ui/waiter talk.png" id="7_e3qct"]
 [ext_resource type="Texture2D" uid="uid://bt8wxse22cfh2" path="res://Images/dialogue_ui/customer talk.png" id="8_cyuvo"]
 
@@ -53,6 +54,10 @@ font_size = 42
 
 [node name="omurice" parent="Interact" instance=ExtResource("5_bfbkk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5849352, 0.75689423, 6.455614)
+
+[node name="Clinks" type="AudioStreamPlayer" parent="Interact"]
+stream = ExtResource("6_cyuvo")
+volume_db = -14.949
 
 [node name="DialogueUI" type="Control" parent="Interact"]
 layout_mode = 3
@@ -109,12 +114,5 @@ theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 autowrap_mode = 2
 
-<<<<<<< Updated upstream
-=======
-[node name="Clinks" type="AudioStreamPlayer" parent="Interact"]
-stream = ExtResource("9_cyuvo")
-volume_db = -20.049
-
->>>>>>> Stashed changes
 [connection signal="body_entered" from="Interact/InteractArea" to="Interact" method="_on_interact_area_body_entered"]
 [connection signal="body_exited" from="Interact/InteractArea" to="Interact" method="_on_interact_area_body_exited"]
