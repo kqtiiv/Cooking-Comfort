@@ -37,6 +37,7 @@ func _process(delta: float) -> void:
 			if required_step == GameManager.CookingStep.RICE_COOKER:
 				if not animation_player.is_playing(): 
 					animation_player.play("rice")
+					AudioEffectDelay 
 					audio.play()
 				
 			elif required_step == GameManager.CookingStep.STOVE:
@@ -45,6 +46,7 @@ func _process(delta: float) -> void:
 					animation_player.play("egg")
 					animation_player.play("Sphere_001Action")
 					audio.play()
+					await audio.finished
 			
 			if current_hold_timer >= hold_time:
 				complete_interaction()

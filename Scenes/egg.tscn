@@ -13,3 +13,4 @@ transform = Transform3D(0.0010592404, 0.07197972, 0, -0.05273848, 0.0014456962, 
 
 [node name="sfx" type="AudioStreamPlayer" parent="." index="3"]
 stream = ExtResource("2_85tk0")
+volume_db = -4.386
