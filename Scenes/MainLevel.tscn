@@ -17,6 +17,11 @@
 [ext_resource type="PackedScene" uid="uid://7jwxiw03e3yl" path="res://Scenes/egg.tscn" id="11_e5mp2"]
 [ext_resource type="PackedScene" uid="uid://dhtx04oqboo6s" path="res://Scenes/rice_cooker.tscn" id="12_e5mp2"]
 [ext_resource type="Texture2D" uid="uid://cfe43ks62l3lh" path="res://Assets/3D/World/door.png" id="16_wwetx"]
+[ext_resource type="PackedScene" uid="uid://bhw7ep2i0u5wa" path="res://Assets/3D/World/omurice recipe page.glb" id="9_snxwr"]
+[ext_resource type="PackedScene" uid="uid://brn4rs1o2w6wi" path="res://Assets/3D/World/window.glb" id="10_o8t5j"]
+[ext_resource type="PackedScene" uid="uid://7jwxiw03e3yl" path="res://Scenes/egg.tscn" id="11_e5mp2"]
+[ext_resource type="PackedScene" uid="uid://dhtx04oqboo6s" path="res://Scenes/rice_cooker.tscn" id="12_e5mp2"]
+[ext_resource type="Texture2D" uid="uid://cxmkqgq1t2fxd" path="res://Assets/3D/World/door.png" id="16_wwetx"]
 [ext_resource type="PackedScene" uid="uid://whxe8iylfh7o" path="res://Assets/3D/World/light.glb" id="17_tkw33"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dnhx3"]
