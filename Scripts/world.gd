@@ -2,6 +2,7 @@ extends Node3D
 
 @export var npc_scene: PackedScene
 @export var paths: Array[Path3D]
+@onready var door_anim: AnimationPlayer = $World/Hinge/AnimationPlayer
 
 func _ready():
 	GameManager.request_next_npc.connect(spawn_npc)
@@ -19,6 +20,8 @@ func spawn_npc():
 	target_path.get_node("PathFollow/Interact").setup_new_npc(new_npc)
 	
 	$World/doorbell.play()
+	door_anim.play("open")
+	
 	new_npc.progress_ratio = 0.0
 	
 	# Remove the old NPC from the previous path

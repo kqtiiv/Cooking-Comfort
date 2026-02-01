@@ -149,7 +149,7 @@ func trigger_eating_sequence() -> void:
 	if GameManager.npcs_served < 3:
 		GameManager.current_step = GameManager.CookingStep.TALK_TO_CUSTOMER
 	else:
-		get_tree().change_scene_to_file("res://scenes/ResultsPage.tscn")
+		get_tree().change_scene_to_file("res://Scenes/ResultsScreen.tscn")
 
 
 func _on_interact_area_body_entered(body: Node3D) -> void:

@@ -12,16 +12,12 @@
 [ext_resource type="AudioStream" uid="uid://ko3qh8jpk62o" path="res://Assets/Sounds/dingdong.mp3" id="7_s1b4b"]
 [ext_resource type="PackedScene" uid="uid://brof0gkfufrpq" path="res://Assets/3D/Interactables/plate.glb" id="7_w85lu"]
 [ext_resource type="Script" uid="uid://d0bbviah2ncyb" path="res://Scripts/cooking.gd" id="8_7g1pw"]
-[ext_resource type="PackedScene" uid="uid://bqjh4hyrmdnre" path="res://Assets/3D/World/omurice recipe page.glb" id="9_snxwr"]
-[ext_resource type="PackedScene" uid="uid://vfrh7bs2mh8v" path="res://Assets/3D/Interactables/rice cooker.glb" id="10_e5mp2"]
-[ext_resource type="PackedScene" uid="uid://dcxbbt61cf6xw" path="res://Assets/3D/World/window.glb" id="10_o8t5j"]
-[ext_resource type="PackedScene" uid="uid://sc4xvh310via" path="res://Assets/3D/Interactables/egg.glb" id="14_wwetx"]
-[ext_resource type="Texture2D" uid="uid://cfe43ks62l3lh" path="res://Assets/3D/World/door.png" id="16_wwetx"]
-[ext_resource type="PackedScene" uid="uid://whxe8iylfh7o" path="res://Assets/3D/World/light.glb" id="17_tkw33"]
 [ext_resource type="PackedScene" uid="uid://bhw7ep2i0u5wa" path="res://Assets/3D/World/omurice recipe page.glb" id="9_snxwr"]
 [ext_resource type="PackedScene" uid="uid://brn4rs1o2w6wi" path="res://Assets/3D/World/window.glb" id="10_o8t5j"]
 [ext_resource type="PackedScene" uid="uid://7jwxiw03e3yl" path="res://Scenes/egg.tscn" id="11_e5mp2"]
 [ext_resource type="PackedScene" uid="uid://dhtx04oqboo6s" path="res://Scenes/rice_cooker.tscn" id="12_e5mp2"]
+[ext_resource type="Texture2D" uid="uid://cxmkqgq1t2fxd" path="res://Assets/3D/World/door.png" id="16_wwetx"]
+[ext_resource type="PackedScene" uid="uid://whxe8iylfh7o" path="res://Assets/3D/World/light.glb" id="17_tkw33"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dnhx3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

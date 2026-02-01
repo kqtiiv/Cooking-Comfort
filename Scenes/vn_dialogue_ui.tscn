@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bp7v17k54w50g"]
+[gd_scene load_steps=0 format=3 uid="uid://bp7v17k54w50g"]
 
 [node name="VNDialogueUI" type="Control"]
 layout_mode = 3
