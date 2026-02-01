@@ -6,6 +6,7 @@ extends Node3D
 
 @onready var waitress_img: Sprite2D = $DialogueUI/WaiterTalk
 @onready var customer_img: Sprite2D = $DialogueUI/CustomerTalk
+@onready var audio = $Clinks
 
 var anim_player: AnimationPlayer 
 var npc_controller: PathFollow3D 
@@ -131,6 +132,7 @@ func trigger_eating_sequence() -> void:
 	plate.visible = true
 	
 	if anim_player:
+		audio.play()
 		anim_player.play("eating")
 		await anim_player.animation_finished
 	
